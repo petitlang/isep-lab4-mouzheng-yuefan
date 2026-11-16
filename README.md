@@ -42,22 +42,18 @@ Both GREEN and BLUE pass **201 tests, 0 failures, 0 errors**: 100 FizzBuzz examp
 and the existing 101 PrimeChecker cases. The original RED tests are unchanged.
 GREEN and BLUE are committed and pushed separately.
 
-## Roman numerals BDD - scenarios through 1000 - BLUE
+## Roman numerals BDD - readable scenarios and full-range coverage
 
-The `roman_numerals.feature` scenario outline lists every integer from 1
-through 1000 with its expected Roman numeral. Cucumber runs each row through
-`RomanNumeralsCucumberTest` and the Java step definitions.
+`roman_numerals.feature` explains the behavior through 21 short examples:
+familiar symbols, short forms such as `IV` and `IX`, and mixed numerals.
+`roman_numerals_full_range.feature` holds the other 979 examples. Together,
+they cover every number from 1 through 1000 exactly once. The Given, When,
+and Then steps describe what a reader asks for and sees.
 
-`RomanNumeralConverter.convert(int)` builds the result from descending Roman
+`RomanNumeralConverter.convert(int)` builds the numeral from descending Roman
 values, including the subtractive pairs `CM`, `CD`, `XC`, `XL`, `IX` and `IV`.
-It appends a symbol while its value fits, subtracts that value, and continues
-with the remaining integer. The current scenario range is 1 through 1000.
+BLUE reuses the value and symbol tables via `private static final` fields.
 
-BLUE extracts the value and symbol tables into `private static final` fields.
-Each conversion reuses the tables instead of allocating new arrays; the
-conversion algorithm and outputs are unchanged.
-
-Both GREEN and BLUE pass **1201 tests/scenarios, 0 failures, 0 errors**: 1000 Roman
+The full suite passes **1201 tests/scenarios, 0 failures, 0 errors**: 1000 Roman
 numeral scenarios plus the existing 201 PrimeChecker and FizzBuzz cases.
-The Gherkin examples, Cucumber setup, and earlier exercises are unchanged.
-GREEN and BLUE are committed and pushed separately.
+The expected number-to-numeral mappings and conversion code are unchanged.

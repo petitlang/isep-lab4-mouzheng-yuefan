@@ -9,21 +9,22 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class RomanNumeralSteps {
 
+    private final RomanNumeralConverter converter = new RomanNumeralConverter();
     private int number;
-    private String result;
+    private String romanNumeral;
 
-    @Given("I have the integer {int}")
-    public void iHaveTheInteger(int number) {
+    @Given("I have the number {int}")
+    public void iHaveTheNumber(int number) {
         this.number = number;
     }
 
-    @When("I convert it to a Roman numeral")
-    public void iConvertItToARomanNumeral() {
-        result = new RomanNumeralConverter().convert(number);
+    @When("I ask for its Roman numeral")
+    public void iAskForItsRomanNumeral() {
+        romanNumeral = converter.convert(number);
     }
 
-    @Then("the result should be {string}")
-    public void theResultShouldBe(String expected) {
-        assertEquals(expected, result);
+    @Then("I should see {string}")
+    public void iShouldSee(String expectedRomanNumeral) {
+        assertEquals(expectedRomanNumeral, romanNumeral);
     }
 }
