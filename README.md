@@ -1,13 +1,13 @@
 # ISEP Lab 4 - Mouzheng and Yuefan Liu
 
-## Current cycle: Checking up to 100 - RED
+## Current cycle: Checking up to 100 - GREEN
 
 Following PDF page 24, the tests now cover **every integer from 0 through 100**.
 The existing tests for 0, 1 and 2 are retained. Two additional parameterized tests
 explicitly list the remaining 24 primes and 74 composite numbers.
 
-`PrimeChecker.isPrime()` is unchanged from the previous GREEN/BLUE cycle:
-it returns `true` only when `number == 2`, and otherwise returns `false`.
+`PrimeChecker.isPrime()` now checks divisibility from 2 through `number - 1`.
+It returns `false` for numbers below 2 and for composite numbers.
 
 Run with JDK 17 or newer. Maven Wrapper downloads Maven on its first run:
 
@@ -17,9 +17,7 @@ Run with JDK 17 or newer. Maven Wrapper downloads Maven on its first run:
 
 On Linux/macOS, use `./mvnw test`.
 
-The expected RED result is **101 tests, 24 failures, 0 errors**: the original
-three cases and all 74 composite cases pass, while the 24 new prime cases fail.
-The failures are assertions about missing behavior, not compilation errors.
+The GREEN result is **101 tests, 0 failures, 0 errors**.
 
-Yuefan Liu will continue with GREEN and BLUE. Each phase should be committed
+Yuefan Liu will review BLUE refactoring next. Each phase should be committed
 and pushed separately, as required by PDF page 16.

@@ -3,9 +3,15 @@ package com.isep.lab4;
 public class PrimeChecker {
 
     public boolean isPrime(int number) {
-        if (number == 2) {
-            return true;
+        if (number < 2) {
+            return false;
         }
-        return false;
+
+        for (int divisor = 2; divisor < number; divisor++) {
+            if (number % divisor == 0) {
+                return false;
+            }
+        }
+        return true;
     }
 }
