@@ -1,6 +1,6 @@
 # ISEP Lab 4 - Mouzheng and Yuefan Liu
 
-## Current cycle: Checking up to 100 - BLUE
+## PrimeChecker: checking up to 100 - complete
 
 Following PDF page 24, the tests now cover **every integer from 0 through 100**.
 The existing tests for 0, 1 and 2 are retained. Two additional parameterized tests
@@ -22,3 +22,13 @@ The BLUE result remains **101 tests, 0 failures, 0 errors**.
 
 This completes the current RED/GREEN/BLUE cycle. Each phase was committed
 and pushed separately, as required by PDF page 16.
+
+## Current cycle: FizzBuzz up to 100 - RED
+
+`FizzBuzzTest` contains 100 fixed examples for positive integers 1 through 100.
+The expected results cover ordinary numbers, multiples of 3, multiples of 5,
+and multiples of both 3 and 5. No input validation is required.
+
+`FizzBuzz.fizzBuzz(int)` deliberately throws `UnsupportedOperationException`
+so the new tests are RED while all PrimeChecker tests remain green.
+Mouzheng will complete GREEN and BLUE in separate commits.
