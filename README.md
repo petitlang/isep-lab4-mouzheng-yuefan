@@ -42,10 +42,11 @@ Both GREEN and BLUE pass **201 tests, 0 failures, 0 errors**: 100 FizzBuzz examp
 and the existing 101 PrimeChecker cases. The original RED tests are unchanged.
 GREEN and BLUE are committed and pushed separately.
 
-## Roman numerals BDD - Cucumber setup
+## Roman numerals BDD - scenarios through 1000
 
-The seven initial examples in `roman_numerals.feature` are connected to Java
-step definitions and run by `RomanNumeralsCucumberTest`. The converter still
+The `roman_numerals.feature` scenario outline lists every integer from 1
+through 1000 with its expected Roman numeral. Cucumber runs each row through
+`RomanNumeralsCucumberTest` and the Java step definitions. The converter still
 throws `UnsupportedOperationException` so the scenarios visibly fail until
 the conversion behavior is implemented. The existing PrimeChecker and FizzBuzz
 tests remain unchanged.
