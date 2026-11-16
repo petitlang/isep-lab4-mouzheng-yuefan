@@ -41,3 +41,11 @@ common multiple of 3 and 5 is 15. The order and returned strings stay the same.
 Both GREEN and BLUE pass **201 tests, 0 failures, 0 errors**: 100 FizzBuzz examples
 and the existing 101 PrimeChecker cases. The original RED tests are unchanged.
 GREEN and BLUE are committed and pushed separately.
+
+## Roman numerals BDD - Cucumber setup
+
+The seven initial examples in `roman_numerals.feature` are connected to Java
+step definitions and run by `RomanNumeralsCucumberTest`. The converter still
+throws `UnsupportedOperationException` so the scenarios visibly fail until
+the conversion behavior is implemented. The existing PrimeChecker and FizzBuzz
+tests remain unchanged.
