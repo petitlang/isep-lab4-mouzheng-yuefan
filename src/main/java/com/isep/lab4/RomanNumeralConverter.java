@@ -2,22 +2,40 @@ package com.isep.lab4;
 
 public class RomanNumeralConverter {
 
-    private static final int[] VALUES = {
-            1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1
-    };
-    private static final String[] SYMBOLS = {
-            "M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"
-    };
-
     public String convert(int number) {
-        StringBuilder result = new StringBuilder();
+        StringBuilder romanNumeral = new StringBuilder();
+        int remainingNumber = number;
 
-        for (int index = 0; index < VALUES.length; index++) {
-            while (number >= VALUES[index]) {
-                result.append(SYMBOLS[index]);
-                number -= VALUES[index];
+        for (RomanSymbol symbol : RomanSymbol.values()) {
+            while (remainingNumber >= symbol.arabicValue) {
+                romanNumeral.append(symbol.romanText);
+                remainingNumber -= symbol.arabicValue;
             }
         }
-        return result.toString();
+        return romanNumeral.toString();
+    }
+
+    private enum RomanSymbol {
+        THOUSAND(1000, "M"),
+        NINE_HUNDRED(900, "CM"),
+        FIVE_HUNDRED(500, "D"),
+        FOUR_HUNDRED(400, "CD"),
+        HUNDRED(100, "C"),
+        NINETY(90, "XC"),
+        FIFTY(50, "L"),
+        FORTY(40, "XL"),
+        TEN(10, "X"),
+        NINE(9, "IX"),
+        FIVE(5, "V"),
+        FOUR(4, "IV"),
+        ONE(1, "I");
+
+        private final int arabicValue;
+        private final String romanText;
+
+        RomanSymbol(int arabicValue, String romanText) {
+            this.arabicValue = arabicValue;
+            this.romanText = romanText;
+        }
     }
 }
