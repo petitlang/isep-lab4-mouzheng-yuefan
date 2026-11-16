@@ -42,7 +42,7 @@ Both GREEN and BLUE pass **201 tests, 0 failures, 0 errors**: 100 FizzBuzz examp
 and the existing 101 PrimeChecker cases. The original RED tests are unchanged.
 GREEN and BLUE are committed and pushed separately.
 
-## Roman numerals BDD - scenarios through 1000 - GREEN
+## Roman numerals BDD - scenarios through 1000 - BLUE
 
 The `roman_numerals.feature` scenario outline lists every integer from 1
 through 1000 with its expected Roman numeral. Cucumber runs each row through
@@ -53,7 +53,11 @@ values, including the subtractive pairs `CM`, `CD`, `XC`, `XL`, `IX` and `IV`.
 It appends a symbol while its value fits, subtracts that value, and continues
 with the remaining integer. The current scenario range is 1 through 1000.
 
-The GREEN result is **1201 tests/scenarios, 0 failures, 0 errors**: 1000 Roman
+BLUE extracts the value and symbol tables into `private static final` fields.
+Each conversion reuses the tables instead of allocating new arrays; the
+conversion algorithm and outputs are unchanged.
+
+Both GREEN and BLUE pass **1201 tests/scenarios, 0 failures, 0 errors**: 1000 Roman
 numeral scenarios plus the existing 201 PrimeChecker and FizzBuzz cases.
 The Gherkin examples, Cucumber setup, and earlier exercises are unchanged.
 GREEN and BLUE are committed and pushed separately.
