@@ -23,7 +23,7 @@ The BLUE result remains **101 tests, 0 failures, 0 errors**.
 This completes the current RED/GREEN/BLUE cycle. Each phase was committed
 and pushed separately, as required by PDF page 16.
 
-## Current cycle: FizzBuzz up to 100 - GREEN
+## Current cycle: FizzBuzz up to 100 - BLUE
 
 `FizzBuzzTest` contains 100 fixed examples for positive integers 1 through 100.
 The expected results cover ordinary numbers, multiples of 3, multiples of 5,
@@ -34,6 +34,10 @@ is divisible by both 3 and 5, then by 3, then by 5, and otherwise returns the
 number as a string. The common-multiple case takes precedence over either
 individual rule. Inputs are assumed to be positive integers.
 
-The GREEN result is **201 tests, 0 failures, 0 errors**: 100 FizzBuzz examples
+BLUE simplifies the common-multiple condition from
+`number % 3 == 0 && number % 5 == 0` to `number % 15 == 0`, since the least
+common multiple of 3 and 5 is 15. The order and returned strings stay the same.
+
+Both GREEN and BLUE pass **201 tests, 0 failures, 0 errors**: 100 FizzBuzz examples
 and the existing 101 PrimeChecker cases. The original RED tests are unchanged.
 GREEN and BLUE are committed and pushed separately.
