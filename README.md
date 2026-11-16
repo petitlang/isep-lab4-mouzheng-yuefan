@@ -1,11 +1,10 @@
 # ISEP Lab 4 - Mouzheng and Yuefan Liu
 
-## First cycle: RED
+## Current cycle: Checking 1/2 - GREEN
 
-The first requirement is that **0 is not a prime number**.
-`PrimeCheckerTest.zeroIsNotPrime()` expects `isPrime(0)` to return `false`.
-`PrimeChecker.isPrime()` is deliberately unimplemented and throws
-`UnsupportedOperationException("Not implemented yet")`.
+The three current tests require **0 and 1 to be non-prime, and 2 to be prime**.
+Following PDF page 22, `PrimeChecker.isPrime()` returns `true` when `number == 2`
+and otherwise returns `false`. This is the minimal implementation for this cycle.
 
 Run with JDK 17 or newer. Maven Wrapper downloads Maven on its first run:
 
@@ -15,8 +14,8 @@ Run with JDK 17 or newer. Maven Wrapper downloads Maven on its first run:
 
 On Linux/macOS, use `./mvnw test`.
 
-The expected RED result is **1 test, 0 assertion failures, 1 error** caused by
-the unimplemented method. The project and test must compile successfully.
+The expected result is **3 tests, 0 failures, 0 errors**.
 
-Yuefan Liu will continue with GREEN, then review whether BLUE refactoring is
-needed. Each phase should be committed and pushed separately.
+Following PDF page 23, BLUE will consolidate the tests for 0 and 1 into a
+parameterized test while retaining the separate test for 2. GREEN and BLUE
+are committed and pushed separately.
